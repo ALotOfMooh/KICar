@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ESP32 DASHBOARD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <h1>KI Auto</h1>
+    </div>
+    <div class="content">
+        <div class="perceptron">
+            <p class="text_input"><span id="input"></span> Input Layer</p>
+            <p class="text_output"><span id="output"></span> Output Layer</p>
+            <p class="switch">
+                <input type="range" onchange="updateSliderPWM(this)" id="slider1" min="0" max="100" step="1" value="0"
+                    class="slider1">
+            </p>
+            <p class="switch">
+                <input type="range" onchange="updateSliderPWM(this)" id="slider2" min="0" max="100" step="1" value="0"
+                    class="slider2">
+            </p>
+
+            <p class="switch">
+                <input type="range" onchange="updateSliderPWM(this)" id="slider3" min="0" max="100" step="1" value="0"
+                    class="slider3">
+            </p>
+
+            <p class="switch">
+                <input type="range" onchange="updateSliderPWM(this)" id="slider4" min="0" max="100" step="1" value="0"
+                    class="slider4">
+            </p>
+
+            <div class="dot1" id="dot1"></div>
+            <div class="dot2" id="dot2"></div>
+            <div class="dot3" id="dot3"></div>
+            <div class="dot4" id="dot4"></div>
+            <div class="activation1_1" id="act1_1"></div>
+            <div class="activation1_2" id="act1_2"></div>
+            <div class="activation2_1" id="act2_1"></div>
+            <div class="activation2_2" id="act2_2"></div>
+
+            <p class="input1"> <span id="in1">70 </span></p>
+            <p class="input2"> <span id="in2">70 </span></p>
+            <p class="output1"> <span id="out1">70 </span></p>
+            <p class="output2"> <span id="out2">70 </span></p>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle_power" onclick="powerToggle()" /> Power
+            <div class="slider round"></div>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle_reverse" onclick="reverseToggle()" /> backwards
+            <div class="slider round"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
